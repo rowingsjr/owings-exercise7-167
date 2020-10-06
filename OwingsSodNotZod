@@ -12,22 +12,22 @@ import java.util.Scanner;
 public class OwingsMainClass 
 {	//START of Class
 	//Declaration & Initialization of Class Variables
-	public static final double TAX_RATE 			= 0.075;						//Fixed tax rate of 0.075
-	public static final String DISCOUNT_NAME_MEMBER	= "Member";						//Fixed name for discounts for a "Member"
-	public static final String DISCOUNT_NAME_SENIOR	= "Senior";						//Fixed name for discounts for a "Senior"
-	public static final String DISCOUNT_NAME_NONE	= "No Discount";				//Fixed name for discounts for a "No Discount"
-	public static final String DISCOUNT_NAME_QUIT	= "Quit";						//Fixed name for discounts for "Quit"
-	public static final double DISCOUNT_RATE_MEMBER	= 0.15;							//Fixed discount rate 0.15
-	public static final double DISCOUNT_RATE_SENIOR	= 0.25;							//Fixed discount rate 0.25
-	public static final double DISCOUNT_RATE_NONE	= 0.0;							//Fixed discount rate 0.0
+	public static final double TAX_RATE 		= 0.075;			//Fixed tax rate of 0.075
+	public static final String DISCOUNT_NAME_MEMBER	= "Member";			//Fixed name for discounts for a "Member"
+	public static final String DISCOUNT_NAME_SENIOR	= "Senior";			//Fixed name for discounts for a "Senior"
+	public static final String DISCOUNT_NAME_NONE	= "No Discount";		//Fixed name for discounts for a "No Discount"
+	public static final String DISCOUNT_NAME_QUIT	= "Quit";			//Fixed name for discounts for "Quit"
+	public static final double DISCOUNT_RATE_MEMBER	= 0.15;				//Fixed discount rate 0.15
+	public static final double DISCOUNT_RATE_SENIOR	= 0.25;				//Fixed discount rate 0.25
+	public static final double DISCOUNT_RATE_NONE	= 0.0;				//Fixed discount rate 0.0
 	public static final String ITEM_NAME_PREMIUM	= "Bermuda Grass Treatment";	//Fixed name for item; "Golf Grass Treatment"
-	public static final String ITEM_NAME_SPECIAL	= "Beach Grass Treatment";		//Fixed name for item; "Beach Grass Treatment"
-	public static final String ITEM_NAME_BASIC		= "Regular Grass Treatment";	//Fixed name for item; "Regular Grass Treatment"
-	public static final String ITEM_NAME_RETURN		= "Return to Main Menu";		//Fixed name for "Return to Main Menu"
-	public static final double ITEM_RATE_PREMIUM	= 55.95;						//Fixed discount rate 55.95
-	public static final double ITEM_RATE_SPECIAL	= 24.95;						//Fixed discount rate 24.95
-	public static final double ITEM_RATE_BASIC		= 15.95;						//Fixed discount rate 15.95
-	public static final int RESET_VALUE				= 0;							//Fixed reset value of 0
+	public static final String ITEM_NAME_SPECIAL	= "Beach Grass Treatment";	//Fixed name for item; "Beach Grass Treatment"
+	public static final String ITEM_NAME_BASIC	= "Regular Grass Treatment";	//Fixed name for item; "Regular Grass Treatment"
+	public static final String ITEM_NAME_RETURN	= "Return to Main Menu";	//Fixed name for "Return to Main Menu"
+	public static final double ITEM_RATE_PREMIUM	= 55.95;			//Fixed discount rate 55.95
+	public static final double ITEM_RATE_SPECIAL	= 24.95;			//Fixed discount rate 24.95
+	public static final double ITEM_RATE_BASIC	= 15.95;			//Fixed discount rate 15.95
+	public static final int RESET_VALUE		= 0;				//Fixed reset value of 0
 
 	public static void main(String[] args) 
 	{	//START of main method
@@ -37,15 +37,15 @@ public class OwingsMainClass
 		String userName			= "";	//Name of current user
 		char rateSelection		= ' ';	//Menu selection from the Discount Menu
 		char itemSelection		= ' ';	//Menu selection from the Item Menu
-		int	howMany				= 0;	//Number of bags the customer purchased
+		int	howMany			= 0;	//Number of bags the customer purchased
 		String discountName		= "";	//Discount name based on the menu selection
 		double discountRate		= 0.0;	//Discount rate based on the menu selection
 		String itemName			= "";	//Type of sod purchased
 		double itemPrice		= 0.0;	//Price of each bag of sod
-		double discountAmount	= 0.0;	//Discount amount for each bag
-		double discountPrice	= 0.0;	//Discount price for each bag
+		double discountAmount		= 0.0;	//Discount amount for each bag
+		double discountPrice		= 0.0;	//Discount price for each bag
 		double subTotal			= 0.0;	//SubTotal of the transaction
-		double tax				= 0.0;	//Tax for the transaction
+		double tax			= 0.0;	//Tax for the transaction
 		double totalCost		= 0.0;	//Total cost of the transaction
 		int memberCount			= 0;	//Count of times the member option was selected
 		int seniorCount			= 0;	//Count of times the senior option was selected
@@ -120,10 +120,10 @@ public class OwingsMainClass
 				}	//END of IF statements for itemSelectoins
 
 				//Back-end Declarations & Equations
-				discountAmount	= itemPrice * discountRate;		//Equation for discounted amount variable
+				discountAmount	= itemPrice * discountRate;	//Equation for discounted amount variable
 				discountPrice	= itemPrice - discountAmount;	//Equation for discounted price variable
-				purchaseAmt		= howMany * discountPrice;		//Equation for purchase amount variable
-				subTotal		= subTotal + purchaseAmt;		//Equation for subTotal
+				purchaseAmt	= howMany * discountPrice;	//Equation for purchase amount variable
+				subTotal	= subTotal + purchaseAmt;	//Equation for subTotal
 
 				//OUTPUT
 				//displayItemReciept
@@ -135,8 +135,8 @@ public class OwingsMainClass
 			}	//END of While Loop for itemSelection != 'R'
 
 			//Back-end Declarations & Equations
-			tax			= subTotal * TAX_RATE;		//Equation for tax
-			totalCost	= subTotal + tax;			//Equation for total cost
+			tax		= subTotal * TAX_RATE;		//Equation for tax
+			totalCost	= subTotal + tax;		//Equation for total cost
 			grandTotal	= grandTotal + totalCost;	//Equation for grand Total
 
 			//OUTPUT
@@ -318,9 +318,9 @@ public class OwingsMainClass
 
 		//Test user input for an invalid character using validation loop for localSelection
 		while (localSelection != 'A' &&
-				localSelection != 'B' &&
-				localSelection != 'C' &&
-				localSelection != 'Q') 
+		       localSelection != 'B' &&
+		       localSelection != 'C' &&
+		       localSelection != 'Q') 
 		{	//START of Validation Loop
 			System.out.println("\n~~~Invalid selection, please try again.~~~\n");
 			//Discount Menu
@@ -344,9 +344,9 @@ public class OwingsMainClass
 
 		//Test user input for an invalid character using validation loop for localSelection
 		while ( localSelection != 'A' &&
-				localSelection != 'B' &&
-				localSelection != 'C' &&
-				localSelection != 'R') 
+			localSelection != 'B' &&
+			localSelection != 'C' &&
+			localSelection != 'R') 
 		{	//START of Validation Loop 2
 			System.out.println("\n~~~Invalid selection, please try again.~~~\n");
 			//Item Menu
