@@ -256,6 +256,40 @@ public class OwingsMainClass
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~\n");
 	}	//END of Final Report
 
+	//MainMenu
+	public static void displayMainMenu() 
+	{	//START of Main Menu
+		//Discount Menu
+		System.out.println("In order to correctly calculate your total, please choose");
+		System.out.println("the appropiate option as it relates to you.");
+		System.out.println("");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("DISCOUNT MENU");
+		System.out.printf("%-1s%4s%7s%13s%1s\n", "[A]", "for", DISCOUNT_NAME_MEMBER, (DISCOUNT_RATE_MEMBER * 100), "%");
+		System.out.printf("%-1s%4s%7s%13s%1s\n", "[B]", "for", DISCOUNT_NAME_SENIOR, (DISCOUNT_RATE_SENIOR * 100), "%");
+		System.out.printf("%-1s%4s%12s%8s%1s\n", "[C]", "for", DISCOUNT_NAME_NONE, (DISCOUNT_RATE_NONE * 100), "%");
+		System.out.printf("%-1s%3s%6s\n", "[Q]", "to", DISCOUNT_NAME_QUIT);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.print("Enter your selection here: ");
+	}	//END of Main Menu
+
+	//ItemMenu
+	public static void displayItemMenu() 
+	{	//START of ItemMenu
+		//Item Menu
+		System.out.println("");
+		System.out.println("Thank you for your response.");
+		System.out.println("Please choose what type of lawn treatment needed");
+		System.out.println("");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("ITEM MENU");
+		System.out.printf("%-1s%5s%2s%4s%2s\n", "[A]", "for ", ITEM_NAME_PREMIUM, "$ ", ITEM_RATE_PREMIUM);
+		System.out.printf("%-1s%5s%2s%6s%2s\n", "[B]", "for ", ITEM_NAME_SPECIAL, "$ ", ITEM_RATE_SPECIAL);
+		System.out.printf("%-1s%5s%2s%4s%2s\n", "[C]", "for ", ITEM_NAME_BASIC, "$ ", ITEM_RATE_BASIC);
+		System.out.printf("%-1s%3s%21s\n", "[R]", "to", ITEM_NAME_RETURN);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.print("Enter your selection here: ");		
+	}
 
 	//VR Methods
 	//getUserName VR method
@@ -277,18 +311,8 @@ public class OwingsMainClass
 	public static char validateMainMenu(Scanner borrowedInput) 
 	{	//START of validateMainMenu VR method
 		char localSelection = ' ';
-		//Discount Menu
-		System.out.println("In order to correctly calculate your total, please choose");
-		System.out.println("the appropiate option as it relates to you.");
-		System.out.println("");
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("DISCOUNT MENU");
-		System.out.printf("%-1s%4s%7s%13s%1s\n", "[A]", "for", DISCOUNT_NAME_MEMBER, (DISCOUNT_RATE_MEMBER * 100), "%");
-		System.out.printf("%-1s%4s%7s%13s%1s\n", "[B]", "for", DISCOUNT_NAME_SENIOR, (DISCOUNT_RATE_SENIOR * 100), "%");
-		System.out.printf("%-1s%4s%12s%8s%1s\n", "[C]", "for", DISCOUNT_NAME_NONE, (DISCOUNT_RATE_NONE * 100), "%");
-		System.out.printf("%-1s%3s%6s\n", "[Q]", "to", DISCOUNT_NAME_QUIT);
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.print("Enter your selection here: ");
+		//Main Menu
+		displayMainMenu();
 		//localSelection
 		localSelection = borrowedInput.next().toUpperCase().charAt(0);
 
@@ -300,16 +324,7 @@ public class OwingsMainClass
 		{	//START of Validation Loop
 			System.out.println("\n~~~Invalid selection, please try again.~~~\n");
 			//Discount Menu
-			System.out.println("Please choose the appropiate option.");
-			System.out.println("");
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-			System.out.println("DISCOUNT MENU");
-			System.out.printf("%-1s%4s%7s%13s%1s\n", "[A]", "for", DISCOUNT_NAME_MEMBER, (DISCOUNT_RATE_MEMBER * 100), "%");
-			System.out.printf("%-1s%4s%7s%13s%1s\n", "[B]", "for", DISCOUNT_NAME_SENIOR, (DISCOUNT_RATE_SENIOR * 100), "%");
-			System.out.printf("%-1s%4s%12s%8s%1s\n", "[C]", "for", DISCOUNT_NAME_NONE, (DISCOUNT_RATE_NONE * 100), "%");
-			System.out.printf("%-1s%3s%6s\n", "[Q]", "to", DISCOUNT_NAME_QUIT);
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-			System.out.print("Enter your selection here: ");
+			displayMainMenu();
 			//localSelection
 			localSelection = borrowedInput.next().toUpperCase().charAt(0);
 		}	//END of Validation Loop
@@ -323,18 +338,7 @@ public class OwingsMainClass
 		char localSelection = ' ';
 		//PRIME READ 2 (for item selection)
 		//Item Menu
-		System.out.println("");
-		System.out.println("Thank you for your response.");
-		System.out.println("Please choose what type of lawn treatment needed");
-		System.out.println("");
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("ITEM MENU");
-		System.out.printf("%-1s%5s%2s%4s%2s\n", "[A]", "for ", ITEM_NAME_PREMIUM, "$ ", ITEM_RATE_PREMIUM);
-		System.out.printf("%-1s%5s%2s%6s%2s\n", "[B]", "for ", ITEM_NAME_SPECIAL, "$ ", ITEM_RATE_SPECIAL);
-		System.out.printf("%-1s%5s%2s%4s%2s\n", "[C]", "for ", ITEM_NAME_BASIC, "$ ", ITEM_RATE_BASIC);
-		System.out.printf("%-1s%3s%21s\n", "[R]", "to", ITEM_NAME_RETURN);
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.print("Enter your selection here: ");
+		displayItemMenu();
 		//local selection
 		localSelection = borrowedInput.next().toUpperCase().charAt(0);
 
@@ -346,19 +350,9 @@ public class OwingsMainClass
 		{	//START of Validation Loop 2
 			System.out.println("\n~~~Invalid selection, please try again.~~~\n");
 			//Item Menu
-			System.out.println("Please choose what type of lawn treatment needed");
-			System.out.println("");
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-			System.out.println("ITEM MENU");
-			System.out.printf("%-1s%5s%2s%4s%2s\n", "[A]", "for ", ITEM_NAME_PREMIUM, "$ ", ITEM_RATE_PREMIUM);
-			System.out.printf("%-1s%5s%2s%6s%2s\n", "[B]", "for ", ITEM_NAME_SPECIAL, "$ ", ITEM_RATE_SPECIAL);
-			System.out.printf("%-1s%5s%2s%4s%2s\n", "[C]", "for ", ITEM_NAME_BASIC, "$ ", ITEM_RATE_BASIC);
-			System.out.printf("%-1s%3s%21s\n", "[R]", "to", ITEM_NAME_RETURN);
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-			System.out.print("Enter your selection here: ");
+			displayItemMenu();
 			//local selection
 			localSelection = borrowedInput.next().toUpperCase().charAt(0);				
-
 		}//END OF Validation Loop for localSelection
 		return localSelection;
 	}	//END OF validateItemMenu VR method
